@@ -1,0 +1,9 @@
+def topic(heading, decoration):
+    print(f"{decoration * 5} {heading} {decoration * 5}")
+
+def instructions():
+    topic('Instructions', '-')
+
+want_instructions = input("Press <enter> to read or any key to continue: ")
+if want_instructions=='':
+    instructions()
