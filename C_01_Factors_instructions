@@ -3,7 +3,42 @@ def topic(heading, decoration):
 
 def instructions():
     topic('Instructions', '-')
+    print (""" To use this program simply enter an integer between 1 and 200. This program will
+               show the factors of your chosen integer. 
+               It will also tell your chosen number...
+              -is a prime number(ie: it has two factors)
+              -it is a perfect square
+                
+               to exit the program please type 'xxx' 
+                
+               program continues
+                
+               process finished with exit code 0 """)
 
-want_instructions = input("Press <enter> to read or any key to continue: ")
+
+def integer_check(question):
+
+    while True:
+        error = ('Please enter a number that is in between 1 and 200 inclusive')
+        error2=('please enter an integer that is less than or equal to 200')
+
+        response = input(question).lower()
+        if response == 'xxx':
+            return response
+
+        try:
+            if response > 0 and response <= 200:
+                return response
+            elif response > 200:
+                print(error2)
+        except ValueError:
+            print(error)
+
+topic ("The ultimate factor finder","-")
+
+#display instructions if requested
+
+want_instructions = input("Press <enter> to read the instructions or any key to continue: ")
 if want_instructions=='':
     instructions()
+
